@@ -4,6 +4,7 @@ public sealed class Atom
 {
 #region Fields
 	private string _name;
+	private string _symbol;
 	
 	private int _electrons;
 	private int _protons;
@@ -18,6 +19,12 @@ public sealed class Atom
 	{
 		get { return _name; }
 		set { _name = value; }
+	}
+
+	public string Symbol
+	{
+		get { return _symbol; }
+		set { _symbol = value; }
 	}
 	
 	public int Electrons
@@ -42,15 +49,18 @@ public sealed class Atom
 	
 #region Constructors
 	public Atom (): 
-	this("Dark Matter", 0, 0, 0) {}
+	this("Dark Matter", "?", 0, 0, 0) {}
 	
 	public Atom (string name): 
-		this(name, 0,0,0) {}
+		this(name, "?", 0, 0, 0) {}
 	
 	public Atom (int electrons, int protons, int neutrons): 
-		this("Dark Matter", electrons, protons, neutrons) {}
+		this("Dark Matter", "?", electrons, protons, neutrons) {}
+
+	public Atom (string name, int electrons, int protons, int neutrons):
+		this(name, "?", electrons, protons, neutrons) {}
 	
-	public Atom (string name, int electrons, int protons, int neutrons)
+	public Atom (string name, string symbol, int electrons, int protons, int neutrons)
 	{
 		Name = name;
 		Electrons = electrons;
