@@ -1,6 +1,6 @@
 using MonoConcept.Utilities;
 
-public sealed class Atom
+public sealed class Atom : IMatter
 {
 #region Fields
 	private string _name;

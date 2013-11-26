@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class Molecule : Item
+public class Molecule : IMatter
 {
 #region Fields
 	private string _name;

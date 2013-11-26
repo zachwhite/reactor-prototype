@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ReactorOutputSlot : Slot
+public class ELEMENTS
 {
 
 }
