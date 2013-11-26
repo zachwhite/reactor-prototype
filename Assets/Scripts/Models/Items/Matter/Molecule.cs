@@ -17,14 +17,29 @@ public class Molecule : Item
 	}
 	
 	public List<Atom> Atoms
-	{ get { return _atoms; } }
+	{ 
+		get { return _atoms; } 
+		set { _atoms = value; }
+	}
+
 #endregion
 
 	
 #region Constructors
-	public Molecule()
+	public Molecule(string name, List<Atom> atoms)
 	{
-		
+		Name = name;
+		Atoms = atoms;
+	}
+
+	public Molecule(string name, Atom[] atoms)
+	{
+		Name = name;
+		Atoms = new List<Atom>();
+		for (int i = 0; i < atoms.Length; i++)
+		{
+			Atoms.Add(atoms[i]);
+		}
 	}
 #endregion
 	
