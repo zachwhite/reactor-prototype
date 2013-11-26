@@ -1,4 +1,5 @@
 using MonoConcept.Utilities;
+using System.Collections.Generic;
 
 public sealed class Atom : IMatter
 {
@@ -43,6 +44,16 @@ public sealed class Atom : IMatter
 	{
 		get { return _neutrons; }
 		set { _neutrons = value; }
+	}
+
+	public List<Atom> Atoms
+	{
+		get 
+		{ 
+			List<Atom> atomList = new List<Atom>();
+			atomList.Add(this);
+			return atomList;
+		}
 	}
 #endregion
 
@@ -125,5 +136,5 @@ public sealed class Atom : IMatter
 	private void arrangeShells()
 	{
 		
-	}	
+	}
 }
