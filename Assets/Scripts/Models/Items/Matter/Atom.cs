@@ -3,43 +3,36 @@ using System.Collections.Generic;
 
 public sealed class Atom : IMatter
 {
-#region Fields
-	private string _name;
-	private string _symbol;
-	
-	private int _electrons;
-	private int _protons;
-	private int _neutrons;
-	
-	private int[] _shell;
-#endregion
-
-	
 #region Properties
+	private string _name;
 	public string Name
 	{
 		get { return _name; }
 		set { _name = value; }
 	}
 
+	private string _symbol;
 	public string Symbol
 	{
 		get { return _symbol; }
 		set { _symbol = value; }
 	}
-	
+
+	private int _electrons;
 	public int Electrons
 	{
 		get { return _electrons; }
 		set { _electrons = value; arrangeShells(); }
 	}
-	
+
+	private int _protons;
 	public int Protons
 	{
 		get { return _protons; }
 		set{ _protons = value; }
 	}
-	
+
+	private int _neutrons;
 	public int Neutrons
 	{
 		get { return _neutrons; }

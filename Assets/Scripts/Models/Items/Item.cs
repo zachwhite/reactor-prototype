@@ -3,22 +3,15 @@ using System.Collections.Generic;
 
 public class Item
 {
-#region Fields
-	private string _name;
-
-	private Sprite _icon;
-
-	private List<IMatter> _matter;
-#endregion
-
-
 #region Properties
+	private string _name;
 	public string Name
 	{
 		get { return _name; }
 		set { _name = value; }
 	}
 
+	private Sprite _icon;
 	public Sprite Icon
 	{
 		get { return _icon; }
@@ -29,6 +22,7 @@ public class Item
 		}
 	}
 
+	private List<IMatter> _matter;
 	public List<IMatter> Matter
 	{
 		get { return _matter; }
@@ -57,5 +51,4 @@ public class Item
 		}
 	}
 #endregion
-
 }

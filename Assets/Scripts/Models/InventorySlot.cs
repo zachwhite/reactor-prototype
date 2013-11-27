@@ -3,20 +3,16 @@ using System.Collections;
 
 public class InventorySlot
 {
-#region Fields
-	private Item _item;
-	private int _quantity;
-#endregion
-
-
 #region Properties
-	public Item Item
+	private Item _item;
+	public Item Item 
 	{ 
 		get { return _item; }
 		set { _item = value; }
 	}
 
-	public int Quantity
+	private int _quantity;
+	public int Quantity 
 	{
 		get { return _quantity; }
 		set { _quantity = value; }

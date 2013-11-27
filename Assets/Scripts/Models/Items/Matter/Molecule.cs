@@ -2,20 +2,15 @@ using System.Collections.Generic;
 
 public class Molecule : IMatter
 {
-#region Fields
-	private string _name;
-	
-	private List<Atom> _atoms;
-#endregion
-
-	
 #region Properties
+	private string _name;
 	public string Name
 	{
 		get { return _name; }
 		set { _name = value; }
 	}
-	
+
+	private List<Atom> _atoms;
 	public List<Atom> Atoms
 	{ 
 		get { return _atoms; } 
@@ -42,5 +37,4 @@ public class Molecule : IMatter
 		}
 	}
 #endregion
-	
 }
