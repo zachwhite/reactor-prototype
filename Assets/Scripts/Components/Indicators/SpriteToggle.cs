@@ -8,20 +8,20 @@
 public sealed class SpriteToggle : MonoBehaviour 
 {
 #region Constants
-	public bool OFF = false;
-	public bool ON = true;
+	public const bool OFF = false;
+	public const bool ON = true;
 #endregion
 
 
 #region Properties
 	private SpriteRenderer _spriteRenderer;
 
-	[SerializeField] 
-	private bool _state;
+	[SerializeField]
+	private bool _state = OFF;
 	public bool State
 	{
 		get { return _state; }
-		set { _state = value; }
+		set { _state = value; updateSprite (); }
 	}
 
 	[SerializeField] 
@@ -42,10 +42,20 @@ public sealed class SpriteToggle : MonoBehaviour
 #endregion
 
 
+#region Unity Triggers
+	// Runs before game starts.
 	public void Awake()
 	{
 		_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 	}
+
+
+	// Runs upon instantiation.
+	public void Start()
+	{
+		updateSprite ();
+	}
+#endregion
 
 
 	/// <summary>
@@ -54,7 +64,6 @@ public sealed class SpriteToggle : MonoBehaviour
 	public void ToggleOn()
 	{
 		State = ON;
-		_spriteRenderer.sprite = ToggleOnSprite;
 	}
 
 
@@ -64,7 +73,6 @@ public sealed class SpriteToggle : MonoBehaviour
 	public void ToggleOff()
 	{
 		State = OFF;
-		_spriteRenderer.sprite = ToggleOffSprite;
 	}
 
 
@@ -75,7 +83,7 @@ public sealed class SpriteToggle : MonoBehaviour
 	public bool Toggle()
 	{
 		// Toggle was on, turn it off.
-		if (State = OFF)
+		if (State == OFF)
 		{
 			ToggleOn ();
 			return ON;
@@ -84,5 +92,18 @@ public sealed class SpriteToggle : MonoBehaviour
 		// Toggle was off, turn it on.
 		ToggleOff ();
 		return OFF;
+	}
+
+
+	// Set the sprite based on whether State is ON or OFF.
+	private void updateSprite()
+	{
+		if (_spriteRenderer != null)
+		{
+			if (State == ON)
+				_spriteRenderer.sprite = ToggleOnSprite;
+			else
+				_spriteRenderer.sprite = ToggleOffSprite;
+		}
 	}
 }
