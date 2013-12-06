@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
-[RequireComponent (typeof(Collider))]
-public abstract class Hoverable : MonoBehaviour
+/// <summary>
+/// Game Object has behavior when hovered over with the mouse.
+/// </summary>
+public interface IHoverable
 {
-	public abstract void OnMouseEnter();
-	public abstract void OnMouseOver();
-	public abstract void OnMouseExit();
+	void OnMouseEnter();
+	void OnMouseOver();
+	void OnMouseExit();
 }

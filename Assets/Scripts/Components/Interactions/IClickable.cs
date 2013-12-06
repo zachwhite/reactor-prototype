@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 
-[RequireComponent (typeof(Collider))]
-public abstract class Clickable : MonoBehaviour
+/// <summary>
+/// Game Object performs behavior when clicked with the mouse.
+/// </summary>
+public interface IClickable
 {
-	public abstract void OnMouseDown();
-	public abstract void OnMouseUp();
+	void OnMouseDown();
+	void OnMouseUp();
 }

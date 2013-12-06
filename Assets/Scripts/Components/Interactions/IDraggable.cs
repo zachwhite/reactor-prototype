@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 
-[RequireComponent (typeof(Collider))]
-public abstract class Draggable : MonoBehaviour
+/// <summary>
+/// Game Object can be dragged with the mouse.
+/// </summary>
+public interface IDraggable
 {
-	public abstract void OnMouseDrag();
-	public abstract void OnMouseUp();
+	void OnMouseDrag();
+	void OnMouseUp();
 }
