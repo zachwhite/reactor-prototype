@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class SpriteToggle : MonoBehaviour 
+/// <summary>
+/// Toggle between two different sprites.
+/// </summary>
+[RequireComponent(typeof(SpriteRenderer))]
+[AddComponentMenu("Indicators/Toggle Sprite")]
+public sealed class SpriteToggle : MonoBehaviour 
 {
 #region Constants
-	public enum ToggleState
-	{ ON = true, OFF = false }
+	public bool OFF = false;
+	public bool ON = true;
 #endregion
 
 
@@ -13,8 +17,8 @@ public class SpriteToggle : MonoBehaviour
 	private SpriteRenderer _spriteRenderer;
 
 	[SerializeField] 
-	private ToggleState _state;
-	public ToggleState State
+	private bool _state;
+	public bool State
 	{
 		get { return _state; }
 		set { _state = value; }
@@ -38,12 +42,18 @@ public class SpriteToggle : MonoBehaviour
 #endregion
 
 
+	public void Awake()
+	{
+		_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+	}
+
+
 	/// <summary>
 	/// Toggle the sprite to its ON state.
 	/// </summary>
 	public void ToggleOn()
 	{
-		State = ToggleState.ON;
+		State = ON;
 		_spriteRenderer.sprite = ToggleOnSprite;
 	}
 
@@ -53,7 +63,7 @@ public class SpriteToggle : MonoBehaviour
 	/// </summary>
 	public void ToggleOff()
 	{
-		State = ToggleState.OFF;
+		State = OFF;
 		_spriteRenderer.sprite = ToggleOffSprite;
 	}
 
@@ -65,14 +75,14 @@ public class SpriteToggle : MonoBehaviour
 	public bool Toggle()
 	{
 		// Toggle was on, turn it off.
-		if (State = ToggleState.OFF)
+		if (State = OFF)
 		{
 			ToggleOn ();
-			return true;
+			return ON;
 		}
 
 		// Toggle was off, turn it on.
 		ToggleOff ();
-		return false;
+		return OFF;
 	}
 }
