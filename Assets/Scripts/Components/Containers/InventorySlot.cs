@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Collider2D))]
 [AddComponentMenu("Containers/Inventory Slot")]
-public class InventorySlot : Slot
+public sealed class InventorySlot : Slot, IClickable
 {
 #region Properties
 	private Item _item;
@@ -25,6 +26,15 @@ public class InventorySlot : Slot
 	{
 		Icon = Item.Icon;
 	}
+
+
+	public void OnMouseDown() {}
+	
+	public void OnMouseUp()
+	{
+		
+	}
+
 
 
 	/// <summary>

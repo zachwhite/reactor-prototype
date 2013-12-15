@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Collider2D))]
 [AddComponentMenu("Containers/Reactor Input Slot")]
-public class ReactorInputSlot : Slot 
+public sealed class ReactorInputSlot : Slot, IClickable
 {
 #region Properties
 	[SerializeField]
@@ -36,9 +37,23 @@ public class ReactorInputSlot : Slot
 	}
 #endregion
 
-
 	public void Start()
 	{
-		Icon = Item.Icon;
+		if (Item != null)
+			Icon = Item.Icon;
 	}
+	
+	
+	// Not used.
+	public void OnMouseDown() {}
+	
+	
+	public void OnMouseUp()
+	{
+		if (ContainsType != ContentTypes.BLOCKED)
+		{
+			// TODO: Bring up element selection screen.
+		}
+	}
+
 }
