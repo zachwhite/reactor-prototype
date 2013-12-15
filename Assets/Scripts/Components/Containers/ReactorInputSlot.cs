@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Containers/Reactor Input Slot")]
 public class ReactorInputSlot : Slot 
 {
 #region Properties

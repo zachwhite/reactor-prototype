@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Containers/Inventory Slot")]
 public class InventorySlot : Slot
 {
 #region Properties

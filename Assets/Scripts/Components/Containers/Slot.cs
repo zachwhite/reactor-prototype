@@ -7,7 +7,7 @@ public abstract class Slot : MonoBehaviour
 #region Properties
 	protected SpriteRenderer _spriteRenderer;
 
-	[SerializeField] private Sprite _icon;
+	private Sprite _icon;
 	public Sprite Icon
 	{
 		get { return _icon; }
