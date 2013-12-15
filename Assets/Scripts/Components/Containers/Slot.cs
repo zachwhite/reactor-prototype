@@ -2,10 +2,10 @@
 using System.Collections;
 
 [RequireComponent (typeof(SpriteRenderer))]
-public class Slot : MonoBehaviour 
+public abstract class Slot : MonoBehaviour 
 {
 #region Properties
-	private SpriteRenderer _spriteRenderer;
+	protected SpriteRenderer _spriteRenderer;
 
 	[SerializeField] private Sprite _icon;
 	public Sprite Icon
@@ -20,7 +20,7 @@ public class Slot : MonoBehaviour
 
 #endregion
 
-	void Start()
+	public virtual void Awake()
 	{
 		_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 	}

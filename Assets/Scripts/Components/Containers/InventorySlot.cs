@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InventorySlot
+public class InventorySlot : Slot
 {
 #region Properties
 	private Item _item;
@@ -18,6 +18,12 @@ public class InventorySlot
 		set { _quantity = value; }
 	}
 #endregion
+
+
+	public void Start()
+	{
+		Icon = Item.Icon;
+	}
 
 
 	/// <summary>
