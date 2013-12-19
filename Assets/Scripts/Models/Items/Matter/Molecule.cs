@@ -36,5 +36,12 @@ public class Molecule : IMatter
 			Atoms.Add(atoms[i]);
 		}
 	}
+
+	public Molecule(JSONObject json)
+	{
+		Name = json["name"].str;
+		Atoms = new List<Atom>();
+
+	}
 #endregion
 }

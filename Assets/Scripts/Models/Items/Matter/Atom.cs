@@ -71,6 +71,14 @@ public sealed class Atom : IMatter
 		Protons = protons;
 		Neutrons = neutrons;
 	}
+
+	public Atom (JSONObject json)
+	{
+		Name = json["name"].str;
+		Electrons = (int) json["electrons"].n;
+		Protons = (int) json["protons"].n;
+		Neutrons = (int) json["neutrons"].n;
+	}
 #endregion
 
 	
