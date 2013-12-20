@@ -3,7 +3,7 @@
 /// </summary>
 public static class RESOURCES
 {
-	/// <summary
+	/// <summary>
 	/// Locations of static data JSON files.
 	/// </summary>
 	public static class STATIC_DATA
