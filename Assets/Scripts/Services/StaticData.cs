@@ -17,7 +17,7 @@ public sealed class StaticData
 			return _atomsData; 
 		}
 		set { _atomsData = value; }
-	}
+	}	
 #endregion
 	
 	
@@ -25,7 +25,5 @@ public sealed class StaticData
 	{
 		TextAsset jsonResource = (TextAsset) Resources.Load (RESOURCES.STATIC_DATA.ATOMS, typeof(TextAsset));
 		AtomsData = JsonMapper.ToObject<AtomsDAO>(jsonResource.text);
-		
-		
 	}
 }

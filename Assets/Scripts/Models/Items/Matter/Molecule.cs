@@ -3,6 +3,13 @@ using System.Collections.Generic;
 public class Molecule : IMatter
 {
 #region Properties
+	private int _moleculeID;
+	public int MoleculeID
+	{
+		get { return _moleculeID; }
+		set { _moleculeID = value; }
+	}
+
 	private string _name;
 	public string Name
 	{

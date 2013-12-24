@@ -1,19 +1,100 @@
-{"atoms" : [
+{"Atoms" : [
 	{
-		"id" : 1,
-		"name" : "Hydrogen",
-		"symbol" : "H",
-		"electrons" : 1,
-		"neutrons" : 0,
-		"protons" : 1
+		"AtomID" : 1,
+		"Name" : "Hydrogen",
+		"Symbol" : "H",
+		"Electrons" : 1,
+		"Neutrons" : 0,
+		"Protons" : 1
 	},
 	
 	{
-		"id" : 6,
-		"name" : "Carbon",
-		"symbol" : "C",
-		"electrons" : 6,
-		"neutrons" : 6,
-		"protons" : 6
+		"AtomID" : 6,
+		"Name" : "Carbon",
+		"Symbol" : "C",
+		"Electrons" : 6,
+		"Neutrons" : 6,
+		"Protons" : 6
+	},
+	
+	{
+		"AtomID" : 7,
+		"Name" : "Nitrogen",
+		"Symbol" : "N",
+		"Electrons" : 7,
+		"Neutrons" : 7,
+		"Protons" : 7
+	},
+	
+	{
+		"AtomID" : 8,
+		"Name" : "Oxygen",
+		"Symbol" : "O",
+		"Electrons" : 8,
+		"Neutrons" : 8,
+		"Protons" : 8
+	},
+	
+	{
+		"AtomID" : 16,
+		"Name" : "Sulfur",
+		"Symbol" : "S",
+		"Electrons" : 16,
+		"Neutrons" : 16,
+		"Protons" : 16
+	},
+	
+	{
+		"AtomID" : 17,
+		"Name" : "Chlorine",
+		"Symbol" : "Cl",
+		"Electrons" : 17,
+		"Neutrons" :17,
+		"Protons" : 18
+	},
+	
+	{
+		"AtomID" : 22,
+		"Name" : "Titanium",
+		"Symbol" : "Ti",
+		"Electrons" : 22,
+		"Neutrons" : 22,
+		"Protons" : 26
+	},
+	
+	{
+		"AtomID" : 26,
+		"Name" : "Iron",
+		"Symbol" : "Fe",
+		"Electrons" : 26,
+		"Neutrons" : 26,
+		"Protons" : 30
+	},
+	
+	{
+		"AtomID" : 29,
+		"Name" : "Copper",
+		"Symbol" : "Cu",
+		"Electrons" : 29,
+		"Neutrons" : 29,
+		"Protons" : 35
+	},
+	
+	{
+		"AtomID" : 47,
+		"Name" : "Silver",
+		"Symbol" : "Ag",
+		"Electrons" : 47,
+		"Neutrons" : 47,
+		"Protons" : 61
+	},
+	
+	{
+		"AtomID" : 78,
+		"Name" : "Platinum",
+		"Symbol" : "Pt",
+		"Electrons" : 78,
+		"Neutrons" : 78,
+		"Protons" : 117
 	}
 ]}
