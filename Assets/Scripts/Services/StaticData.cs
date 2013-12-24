@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using LitJson;
 
-public class StaticData 
+public sealed class StaticData 
 {
 #region Properties
 	private AtomsDAO _atomsData;

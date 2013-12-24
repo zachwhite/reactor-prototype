@@ -1,5 +1,6 @@
 {"atoms" : [
 	{
+		"id" : 1,
 		"name" : "Hydrogen",
 		"symbol" : "H",
 		"electrons" : 1,
@@ -8,6 +9,7 @@
 	},
 	
 	{
+		"id" : 6,
 		"name" : "Carbon",
 		"symbol" : "C",
 		"electrons" : 6,

@@ -4,6 +4,13 @@ using System.Collections.Generic;
 public sealed class Atom : IMatter
 {
 #region Properties
+	private int _atomID;
+	public int AtomID
+	{
+		get { return _atomID; }
+		set { _atomID = value; }
+	}
+	
 	private string _name;
 	public string Name
 	{
@@ -74,6 +81,7 @@ public sealed class Atom : IMatter
 
 	public Atom (JSONObject json)
 	{
+		AtomID = (int) json["id"].n;
 		Name = json["name"].str;
 		Electrons = (int) json["electrons"].n;
 		Protons = (int) json["protons"].n;

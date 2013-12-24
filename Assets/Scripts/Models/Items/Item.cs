@@ -1,9 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// Item model. Stores statistics about items.
+/// Note: Inventory collections should only reference items, not store instances.
+/// </summary>
 public class Item
 {
+#region Constants/Enums
+	[System.Flags]
+	public enum ItemProperties
+	{
+		None = 0,
+		Storable = 1
+	}
+#endregion
+
 #region Properties
+	private int _itemID;
+	public int ItemID
+	{
+		get { return _itemID; }
+		set { _itemID = value; }
+	}
+	
 	private string _name;
 	public string Name
 	{
@@ -21,6 +41,13 @@ public class Item
 			_icon = value; 
 		}
 	}
+	
+	private ItemProperties _properties;
+	public ItemProperties Properties
+	{
+		get { return _properties; }
+		set { _properties = value; }
+	}
 
 	private List<IMatter> _matter;
 	public List<IMatter> Matter
@@ -36,6 +63,7 @@ public class Item
 	{
 		Name = name;
 		Icon = icon;
+		Properties = ItemProperties.None;
 		Matter = matter;
 	}
 
@@ -43,6 +71,7 @@ public class Item
 	{
 		Name = name;
 		Icon = icon;
+		Properties = ItemProperties.None;
 		Matter = new List<IMatter>();
 
 		for (int i = 0; i < matter.Length; i++)
