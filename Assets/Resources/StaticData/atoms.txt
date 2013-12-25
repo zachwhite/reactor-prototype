@@ -96,5 +96,32 @@
 		"Electrons" : 78,
 		"Neutrons" : 78,
 		"Protons" : 117
+	},
+	
+	{
+		"AtomID" : 79,
+		"Name" : "Gold",
+		"Symbol" : "Au",
+		"Electrons" : 79,
+		"Neutrons" : 79,
+		"Protons" : 118
+	},
+	
+	{
+		"AtomID" : 80,
+		"Name" : "Mercury",
+		"Symbol" : "Hg",
+		"Electrons" : 80,
+		"Neutrons" : 80,
+		"Protons" : 121
+	},
+	
+	{
+		"AtomID" : 82,
+		"Name" : "Lead",
+		"Symbol" : "Pb",
+		"Electrons" : 82,
+		"Neutrons" : 82,
+		"Protons" : 125
 	}
 ]}
