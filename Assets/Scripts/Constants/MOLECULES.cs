@@ -1,5 +1,6 @@
 public static class MOLECULES
 {
+	/*
 	public static Molecule WATER = new Molecule ("Water",
 		new Atom[] { 
 			ATOMS.HYDROGEN, ATOMS.HYDROGEN, 
@@ -24,4 +25,6 @@ public static class MOLECULES
 			ATOMS.SULFUR,
 			ATOMS.OXYGEN, ATOMS.OXYGEN, ATOMS.OXYGEN, ATOMS.OXYGEN
 		});
+
+	*/
 }

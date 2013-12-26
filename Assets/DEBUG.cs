@@ -7,7 +7,7 @@ public class DEBUG : MonoBehaviour {
 	void Start () {
 		StaticData staticData = new StaticData();
 		staticData.loadAtomsData();
-		Debug.Log ("Atom name: " + staticData.AtomsData[2].Name);
+		Debug.Log ("Atom name: " + staticData.AtomsData["Lead"].Name);
 	}
 	
 	// Update is called once per frame

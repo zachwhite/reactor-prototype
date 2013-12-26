@@ -10,6 +10,7 @@ public sealed class AtomsDAO
 		set { _atoms = value; }
 	}
 
+	// Get atom by AtomID (atomic number).
 	public Atom this[int atomID]
 	{	
 		get {
@@ -25,6 +26,26 @@ public sealed class AtomsDAO
 			}
 
 			Debug.LogWarning ("AtomsDAO: Could not find atom with ID " + atomID);
+			return null;
+		}
+	}
+
+	// Get atom by name.
+	public Atom this[string atomName]
+	{
+		get {
+			Atom atom;
+			for (int i = 0; i < Atoms.Length; i++)
+			{
+				atom = (Atom) Atoms[i];
+				
+				if (atom.Name == atomName)
+				{
+					return atom;
+				}
+			}
+			
+			Debug.LogWarning ("AtomsDAO: Could not find atom with name '" + atomName + "'");
 			return null;
 		}
 	}
