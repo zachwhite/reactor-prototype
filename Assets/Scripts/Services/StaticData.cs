@@ -5,44 +5,48 @@ using LitJson;
 public sealed class StaticData 
 {
 #region Properties
+	private StaticData[] _instantiations;
+	public StaticData[] Instantiations
+	{
+		get { return _instantiations; }
+		set { _instantiations = value; }
+	}
+
 	private AtomsDAO _atomsData;
 	public AtomsDAO AtomsData
 	{
-		get 
-		{ 
-			// Lazy loading.
-			if (_atomsData == null)
-				loadAtomsData();
-			return _atomsData; 
-		}
+		get { return _atomsData; }
 		set { _atomsData = value; }
 	}
 
 	private MoleculesDAO _moleculesData;
 	public MoleculesDAO MoleculesData
 	{
-		get
-		{
-			// Lazy loading.
-			if (_moleculesData == null)
-				loadMoleculesData ();
-			return _moleculesData;
-		}
+		get { return _moleculesData; }
 		set { _moleculesData = value; }
 	}
 #endregion
-	
-	
-	public void loadAtomsData()
+
+#region Constructors
+	public StaticData() {}
+
+	public StaticData(string resourceLocations)
 	{
-		TextAsset jsonResource = (TextAsset) Resources.Load (RESOURCES.STATIC_DATA.ATOMS, typeof(TextAsset));
+
+	}
+#endregion
+
+
+	public void loadAtomsData(string resourceLocation)
+	{
+		TextAsset jsonResource = (TextAsset) Resources.Load (resourceLocation, typeof(TextAsset));
 		AtomsData = JsonMapper.ToObject<AtomsDAO>(jsonResource.text);
 	}
 
 
-	public void loadMoleculesData()
+	public void loadMoleculesData(string resourceLocation)
 	{
-		TextAsset jsonResource = (TextAsset) Resources.Load (RESOURCES.STATIC_DATA.MOLECULES, typeof(TextAsset));
+		TextAsset jsonResource = (TextAsset) Resources.Load (resourceLocation, typeof(TextAsset));
 		MoleculesData = JsonMapper.ToObject<MoleculesDAO>(jsonResource.text);
 	}
 }

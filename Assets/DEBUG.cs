@@ -6,7 +6,7 @@ public class DEBUG : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		StaticData staticData = new StaticData();
-		staticData.loadAtomsData();
+
 		Debug.Log ("Atom name: " + staticData.AtomsData["Lead"].Name);
 	}
 	

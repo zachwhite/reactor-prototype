@@ -2,5 +2,5 @@
 
 public interface IMatter
 {
-	List<Atom> Atoms { get; }
+	string[] Atoms { get; }
 }

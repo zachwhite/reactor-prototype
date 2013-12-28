@@ -46,13 +46,14 @@ public sealed class Atom : IMatter
 		set { _neutrons = value; }
 	}
 
-	public List<Atom> Atoms
+	public string[] Atoms
 	{
 		get 
 		{ 
-			List<Atom> atomList = new List<Atom>();
-			atomList.Add(this);
-			return atomList;
+			string[] atom = new string[1] {
+				Name
+			};
+			return atom;
 		}
 	}
 #endregion

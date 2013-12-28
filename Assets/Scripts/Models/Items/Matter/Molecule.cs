@@ -17,8 +17,8 @@ public class Molecule : IMatter
 		set { _name = value; }
 	}
 
-	private List<Atom> _atoms;
-	public List<Atom> Atoms
+	private string[] _atoms;
+	public string[] Atoms
 	{ 
 		get { return _atoms; } 
 		set { _atoms = value; }
@@ -28,27 +28,10 @@ public class Molecule : IMatter
 
 	
 #region Constructors
-	public Molecule(string name, List<Atom> atoms)
+	public Molecule(string name, string[] atoms)
 	{
 		Name = name;
 		Atoms = atoms;
-	}
-
-	public Molecule(string name, Atom[] atoms)
-	{
-		Name = name;
-		Atoms = new List<Atom>();
-		for (int i = 0; i < atoms.Length; i++)
-		{
-			Atoms.Add(atoms[i]);
-		}
-	}
-
-	public Molecule(JSONObject json)
-	{
-		Name = json["name"].str;
-		Atoms = new List<Atom>();
-
 	}
 #endregion
 }
