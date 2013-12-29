@@ -30,7 +30,7 @@ public sealed class AtomsDAO
 		}
 	}
 
-	// Get atom by name.
+	// Get atom by name or symbol.
 	public Atom this[string atomName]
 	{
 		get {
@@ -38,14 +38,24 @@ public sealed class AtomsDAO
 			for (int i = 0; i < Atoms.Length; i++)
 			{
 				atom = (Atom) Atoms[i];
-				
-				if (atom.Name == atomName)
+
+				// Search by symbol.
+				if (atomName.Length < 3)
+				{
+					if (atom.Symbol == atomName)
+					{
+						return atom;
+					}
+				}
+
+				// Search by name.
+				else if (atom.Name == atomName)
 				{
 					return atom;
 				}
 			}
 			
-			Debug.LogWarning ("AtomsDAO: Could not find atom with name '" + atomName + "'");
+			Debug.LogWarning ("AtomsDAO: Could not find atom with name/symbol '" + atomName + "'");
 			return null;
 		}
 	}
