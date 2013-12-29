@@ -10,6 +10,7 @@ public class DEBUG : MonoBehaviour {
 
 		StaticData staticData = Services.StaticData;
 		Debug.Log ("Atom name: " + staticData.AtomsData["Lead"].Name);
+		Debug.Log ("Molecule name: " + staticData.MoleculesData["Water"].Name);
 	}
 	
 	// Update is called once per frame

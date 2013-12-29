@@ -23,14 +23,6 @@ public class Molecule : IMatter
 		get { return _atoms; } 
 		set { _atoms = value; }
 	}
-
-	private AtomsDAO _atomsData;
-	public AtomsDAO AtomsDAO
-	{
-		get { return _atomsData; }
-		set { _atomsData = value; }
-	}
-
 #endregion
 
 	

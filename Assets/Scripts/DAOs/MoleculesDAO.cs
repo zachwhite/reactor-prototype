@@ -28,4 +28,24 @@ public sealed class MoleculesDAO
 			return null;
 		}
 	}
+
+
+	public Molecule this[string moleculeName]
+	{
+		get {
+			Molecule molecule;
+			for (int i = 0; i < Molecules.Length; i++)
+			{
+				molecule = (Molecule) Molecules[i];
+
+				if (molecule.Name == moleculeName)
+				{
+					return molecule;
+				}
+			}
+
+			Debug.LogWarning ("MoleculeDAO: Could not find molecule with name '" + moleculeName + "'");
+			return null;
+		}
+	}
 }
