@@ -1,17 +1,10 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using LitJson;
 
 public sealed class StaticData 
 {
 #region Properties
-	private StaticData[] _instantiations;
-	public StaticData[] Instantiations
-	{
-		get { return _instantiations; }
-		set { _instantiations = value; }
-	}
-
 	private AtomsDAO _atomsData;
 	public AtomsDAO AtomsData
 	{
@@ -27,16 +20,24 @@ public sealed class StaticData
 	}
 #endregion
 
+
 #region Constructors
 	public StaticData() {}
 
 	public StaticData(string resourceLocations)
 	{
+		JsonData locations = JsonMapper.ToObject(resourceLocations);
 
+		loadAtomsData ((string) locations["Atoms"]);
+		loadMoleculesData ((string) locations["Molecules"]);
 	}
 #endregion
 
 
+	/// <summary>
+	/// Loads atoms data from a JSON formatted text file.
+	/// </summary>
+	/// <param name="resourceLocation">Location of the JSON file.</param>
 	public void loadAtomsData(string resourceLocation)
 	{
 		TextAsset jsonResource = (TextAsset) Resources.Load (resourceLocation, typeof(TextAsset));
@@ -44,6 +45,10 @@ public sealed class StaticData
 	}
 
 
+	/// <summary>
+	/// Loads molecules data from a JSON formatted text file
+	/// </summary>
+	/// <param name="resourceLocation">Location of the JSON file.</param>
 	public void loadMoleculesData(string resourceLocation)
 	{
 		TextAsset jsonResource = (TextAsset) Resources.Load (resourceLocation, typeof(TextAsset));

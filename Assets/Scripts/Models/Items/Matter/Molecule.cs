@@ -24,14 +24,25 @@ public class Molecule : IMatter
 		set { _atoms = value; }
 	}
 
+	private AtomsDAO _atomsData;
+	public AtomsDAO AtomsDAO
+	{
+		get { return _atomsData; }
+		set { _atomsData = value; }
+	}
+
 #endregion
 
 	
 #region Constructors
-	public Molecule(string name, string[] atoms)
+	public Molecule() {}
+
+	public Molecule(int moleculeID, string name, string[] atoms, AtomsDAO atomsDAO)
 	{
+		MoleculeID = moleculeID;
 		Name = name;
 		Atoms = atoms;
+		AtomsDAO = atomsDAO;
 	}
 #endregion
 }

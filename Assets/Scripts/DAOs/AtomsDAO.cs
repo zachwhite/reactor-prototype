@@ -3,13 +3,6 @@ using System.Collections.Generic;
 
 public sealed class AtomsDAO
 {
-	private StaticData _staticData;
-	public StaticData StaticData
-	{
-		get { return _staticData; }
-		set { _staticData = value; }
-	}
-
 	private Atom[] _atoms;
 	public Atom[] Atoms
 	{

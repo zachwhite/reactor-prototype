@@ -1,6 +1,6 @@
 {"Molecules" : [
 	{
-		"AtomID" : 1,
+		"MoleculeID" : 1,
 		"Name" : "Ammonia",
 		"Atoms" : [
 			"Nitrogen",
@@ -9,7 +9,7 @@
 	},
 	
 	{
-		"AtomID" : 2,
+		"MoleculeID" : 2,
 		"Name" : "Hydrochloric Acid",
 		"Atoms" : [
 			"Hydrogen",
@@ -18,7 +18,7 @@
 	},
 	
 	{
-		"AtomID" : 3,
+		"MoleculeID" : 3,
 		"Name" : "Sulfuric Acid",
 		"Atoms" : [
 			"Hydrogen", "Hydrogen",
@@ -28,7 +28,7 @@
 	},
 	
 	{
-		"AtomID" : 4,
+		"MoleculeID" : 4,
 		"Name" : "Water",
 		"Atoms" : [
 			"Hydrogen", "Hydrogen",

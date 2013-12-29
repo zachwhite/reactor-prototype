@@ -8,8 +8,12 @@ public static class RESOURCES
 	/// </summary>
 	public static class STATIC_DATA
 	{
-		public const string ATOMS = "StaticData/atoms";
-		public const string MOLECULES = "StaticData/molecules";
+		public const string PRODUCTION = @"
+		{	
+			""Atoms""		: ""StaticData/atoms"",
+			""Molecules""	: ""StaticData/molecules"",
+			""Items""		: ""StaticData/items""
+		}";
 	}
 	
 }
