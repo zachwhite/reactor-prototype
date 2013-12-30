@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using MonoConcept;
 
 [RequireComponent (typeof(SpriteRenderer))]
 public abstract class Slot : MonoBehaviour 
