@@ -2,8 +2,8 @@
 using System.Collections;
 
 [RequireComponent(typeof(Collider2D))]
-[AddComponentMenu("Containers/Reactor Input Slot")]
-public sealed class ReactorInputSlot : Slot, IClickable
+[AddComponentMenu("Containers/Reactor Slot")]
+public sealed class ReactorSlot : Slot, IClickable
 {
 #region Properties
 	[SerializeField]
