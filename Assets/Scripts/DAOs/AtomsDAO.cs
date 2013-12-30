@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 public sealed class AtomsDAO
 {
-	private Atom[] _atoms;
+	private Atom[] _Atoms;
 	public Atom[] Atoms
 	{
-		get { return _atoms; }
-		set { _atoms = value; }
+		get { return _Atoms; }
+		set { _Atoms = value; }
 	}
 
 	// Get atom by AtomID (atomic number).

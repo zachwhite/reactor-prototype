@@ -6,18 +6,18 @@ using System.Collections;
 public sealed class InventorySlot : Slot, IClickable
 {
 #region Properties
-	private Item _item;
+	private Item _Item;
 	public Item Item 
 	{ 
-		get { return _item; }
-		set { _item = value; }
+		get { return _Item; }
+		set { _Item = value; }
 	}
 
-	private int _quantity;
+	private int _Quantity;
 	public int Quantity 
 	{
-		get { return _quantity; }
-		set { _quantity = value; }
+		get { return _Quantity; }
+		set { _Quantity = value; }
 	}
 #endregion
 

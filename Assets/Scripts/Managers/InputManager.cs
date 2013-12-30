@@ -4,18 +4,18 @@ using System.Collections;
 public class InputManager : Manager
 {
 #region Properties
-	private Vector3 _mousePosition;
+	private Vector3 _MousePosition;
 	public Vector3 MousePosition
 	{
-		get { return _mousePosition; }
-		set { _mousePosition = value; }
+		get { return _MousePosition; }
+		set { _MousePosition = value; }
 	}
 
-	private bool _mouseLeftButtonDown;
+	private bool _MouseLeftButtonDown;
 	public bool IsLeftMouseButtonDown
 	{
-		get { return _mouseLeftButtonDown; }
-		set { _mouseLeftButtonDown = value; }
+		get { return _MouseLeftButtonDown; }
+		set { _MouseLeftButtonDown = value; }
 	}
 #endregion
 

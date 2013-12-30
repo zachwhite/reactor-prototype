@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 public sealed class MoleculesDAO
 {
-	private Molecule[] _molecules;
+	private Molecule[] _Molecules;
 	public Molecule[] Molecules
 	{
-		get { return _molecules; }
-		set { _molecules = value; }
+		get { return _Molecules; }
+		set { _Molecules = value; }
 	}
 
 	public Molecule this[int moleculeID]

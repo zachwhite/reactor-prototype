@@ -9,31 +9,31 @@ public abstract class Slot : MonoBehaviour
 #endregion
 
 #region Properties
-	protected SpriteRenderer _spriteRenderer;
+	protected SpriteRenderer _SpriteRenderer;
 
-	private Sprite _icon;
+	private Sprite _Icon;
 	public Sprite Icon
 	{
-		get { return _icon; }
+		get { return _Icon; }
 		set 
 		{ 
-			_icon = value;
-			_spriteRenderer.sprite = _icon;
+			_Icon = value;
+			_SpriteRenderer.sprite = _Icon;
 		}
 	}
 	
-	private ContentTypes _containsType = ContentTypes.EMPTY;
+	private ContentTypes _ContainsType = ContentTypes.EMPTY;
 	public ContentTypes ContainsType
 	{
-		get { return _containsType; }
-		set { _containsType = value; }
+		get { return _ContainsType; }
+		set { _ContainsType = value; }
 	}
 
 #endregion
 
 	public virtual void Awake()
 	{
-		_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+		_SpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 		
 		// Most slots are clickable. Check they have a Collider2D component.
 		if (gameObject.ImplementsInterface<IClickable>())

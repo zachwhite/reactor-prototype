@@ -5,18 +5,18 @@ using LitJson;
 public sealed class StaticData 
 {
 #region Properties
-	private AtomsDAO _atomsData;
+	private AtomsDAO _AtomsData;
 	public AtomsDAO AtomsData
 	{
-		get { return _atomsData; }
-		set { _atomsData = value; }
+		get { return _AtomsData; }
+		set { _AtomsData = value; }
 	}
 
-	private MoleculesDAO _moleculesData;
+	private MoleculesDAO _MoleculesData;
 	public MoleculesDAO MoleculesData
 	{
-		get { return _moleculesData; }
-		set { _moleculesData = value; }
+		get { return _MoleculesData; }
+		set { _MoleculesData = value; }
 	}
 #endregion
 
@@ -28,8 +28,8 @@ public sealed class StaticData
 	{
 		JsonData locations = JsonMapper.ToObject(resourceLocations);
 
-		loadAtomsData ((string) locations["Atoms"]);
-		loadMoleculesData ((string) locations["Molecules"]);
+		LoadAtomsData ((string) locations["Atoms"]);
+		LoadMoleculesData ((string) locations["Molecules"]);
 	}
 #endregion
 
@@ -38,7 +38,7 @@ public sealed class StaticData
 	/// Loads atoms data from a JSON formatted text file.
 	/// </summary>
 	/// <param name="resourceLocation">Location of the JSON file.</param>
-	public void loadAtomsData(string resourceLocation)
+	public void LoadAtomsData(string resourceLocation)
 	{
 		TextAsset jsonResource = (TextAsset) Resources.Load (resourceLocation, typeof(TextAsset));
 		AtomsData = JsonMapper.ToObject<AtomsDAO>(jsonResource.text);
@@ -49,7 +49,7 @@ public sealed class StaticData
 	/// Loads molecules data from a JSON formatted text file
 	/// </summary>
 	/// <param name="resourceLocation">Location of the JSON file.</param>
-	public void loadMoleculesData(string resourceLocation)
+	public void LoadMoleculesData(string resourceLocation)
 	{
 		TextAsset jsonResource = (TextAsset) Resources.Load (resourceLocation, typeof(TextAsset));
 		MoleculesData = JsonMapper.ToObject<MoleculesDAO>(jsonResource.text);

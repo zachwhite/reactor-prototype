@@ -1,9 +1,9 @@
 public sealed class Services
 {
-	static StaticData _staticData = new StaticData();
+	static StaticData _StaticData = new StaticData();
 	public static StaticData StaticData
 	{
-		get { return _staticData; }
-		set { _staticData = value; }
+		get { return _StaticData; }
+		set { _StaticData = value; }
 	}
 }

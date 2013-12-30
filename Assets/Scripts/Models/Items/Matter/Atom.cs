@@ -4,46 +4,46 @@ using System.Collections.Generic;
 public sealed class Atom : IMatter
 {
 #region Properties
-	private int _atomID;
+	private int _AtomID;
 	public int AtomID
 	{
-		get { return _atomID; }
-		set { _atomID = value; }
+		get { return _AtomID; }
+		set { _AtomID = value; }
 	}
 	
-	private string _name;
+	private string _Name;
 	public string Name
 	{
-		get { return _name; }
-		set { _name = value; }
+		get { return _Name; }
+		set { _Name = value; }
 	}
 
-	private string _symbol;
+	private string _Symbol;
 	public string Symbol
 	{
-		get { return _symbol; }
-		set { _symbol = value; }
+		get { return _Symbol; }
+		set { _Symbol = value; }
 	}
 
-	private int _electrons;
+	private int _Electrons;
 	public int Electrons
 	{
-		get { return _electrons; }
-		set { _electrons = value; arrangeShells(); }
+		get { return _Electrons; }
+		set { _Electrons = value; ArrangeShells(); }
 	}
 
-	private int _protons;
+	private int _Protons;
 	public int Protons
 	{
-		get { return _protons; }
-		set{ _protons = value; }
+		get { return _Protons; }
+		set{ _Protons = value; }
 	}
 
-	private int _neutrons;
+	private int _Neutrons;
 	public int Neutrons
 	{
-		get { return _neutrons; }
-		set { _neutrons = value; }
+		get { return _Neutrons; }
+		set { _Neutrons = value; }
 	}
 
 	public string[] Atoms
@@ -132,10 +132,12 @@ public sealed class Atom : IMatter
 	/**
 	 * Return radius of the atomic nucleus.
 	 */
-	public float getNucleusRadius()
+	public float NucleusRadius
 	{
-		float nucleons = (float)(Electrons + Protons + Neutrons);
-		return 1.07f * Maths.CubicRoot(nucleons);
+		get {
+			float nucleons = (float)(Electrons + Protons + Neutrons);
+			return 1.07f * Maths.CubicRoot(nucleons);
+		}
 	}
 #endregion
 	
@@ -143,7 +145,7 @@ public sealed class Atom : IMatter
 	/**
 	 * Nothing here, yet. Learn physics or something.
 	 */
-	private void arrangeShells()
+	private void ArrangeShells()
 	{
 		
 	}

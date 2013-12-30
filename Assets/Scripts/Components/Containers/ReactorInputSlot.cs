@@ -7,33 +7,33 @@ public sealed class ReactorInputSlot : Slot, IClickable
 {
 #region Properties
 	[SerializeField]
-	private Sprite _iconAdd;
+	private Sprite _IconAdd;
 	public Sprite IconAdd
 	{
-		get { return _iconAdd; }
-		set { _iconAdd = value; }
+		get { return _IconAdd; }
+		set { _IconAdd = value; }
 	}
 
 	[SerializeField]
-	private Sprite _iconUnavailable;
+	private Sprite _IconUnavailable;
 	public Sprite IconUnavailable
 	{
-		get { return _iconUnavailable; }
-		set { _iconUnavailable = value; }
+		get { return _IconUnavailable; }
+		set { _IconUnavailable = value; }
 	}
 
-	private Item _item;
+	private Item _Item;
 	public Item Item 
 	{ 
-		get { return _item; }
-		set { _item = value; }
+		get { return _Item; }
+		set { _Item = value; }
 	}
 	
-	private int _quantity;
+	private int _Quantity;
 	public int Quantity 
 	{
-		get { return _quantity; }
-		set { _quantity = value; }
+		get { return _Quantity; }
+		set { _Quantity = value; }
 	}
 #endregion
 
