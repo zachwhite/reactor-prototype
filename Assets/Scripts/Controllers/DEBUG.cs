@@ -9,12 +9,14 @@ public class DEBUG : MonoBehaviour {
 		Services.StaticData = new StaticData(RESOURCES.STATIC_DATA.PRODUCTION);
 
 		StaticData staticData = Services.StaticData;
-		Debug.Log ("Atom name: " + staticData.AtomsData["Lead"].Name);
-		Debug.Log ("Molecule name: " + staticData.MoleculesData["Water"].Name);
+		// Debug.Log ("Atom name: " + staticData.AtomsData["Lead"].Name);
+		// Debug.Log ("Molecule name: " + staticData.MoleculesData["Water"].Name);
+
+		string[] elements = Chemistry.ParseFormula ("22HHe3(PbO)");
+		for (int i = 0; i < elements.Length; i++)
+			Debug.Log (elements[i]);
+
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
