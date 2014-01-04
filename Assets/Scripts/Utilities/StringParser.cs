@@ -2,6 +2,8 @@ using UnityEngine;
 
 using System;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 public static class StringParser
 {
@@ -14,6 +16,9 @@ public static class StringParser
 	/// <param name="inputString">Input string.</param>
 	public static string[] Split(string inputString)
 	{
+		inputString = Regex.Replace(inputString, 
+		                            SPLIT_CHAR.ToString () + SPLIT_CHAR.ToString (), 
+		                            SPLIT_CHAR.ToString ());
 		return inputString.Split (SPLIT_CHAR);
 	}
 
@@ -44,15 +49,23 @@ public static class StringParser
 	public static string Numbers(string inputString)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
+		char lastCharacter = ((char)000);
+
 		foreach (char character in inputString) 
 		{
 			if (Char.IsDigit(character) && 
+			    !Char.IsDigit (lastCharacter) &&
 			    stringBuilder.Length > 0)
 			{
 				stringBuilder.Append(SPLIT_CHAR);
+				lastCharacter = SPLIT_CHAR;
 			}
-			
-			stringBuilder.Append(character);
+
+			else
+			{
+				stringBuilder.Append(character);
+				lastCharacter = character;
+			}
 		}
 		
 		return stringBuilder.ToString ();
@@ -64,6 +77,7 @@ public static class StringParser
 		StringBuilder stringBuilder = new StringBuilder();
 
 		int pass = 0;
+
 		foreach (char character in inputString) 
 		{
 			pass++;
@@ -71,11 +85,10 @@ public static class StringParser
 			if (character == '(' && 
 			    stringBuilder.Length > 0)
 			{
-				stringBuilder.Append(SPLIT_CHAR);
+				if (character != SPLIT_CHAR)
+					stringBuilder.Append(SPLIT_CHAR);
 				stringBuilder.Append(character);
 			}
-			
-
 
 			else if (character == ')')
 			{
@@ -83,7 +96,9 @@ public static class StringParser
 				stringBuilder.Append(character);
 
 				if (pass < inputString.Length)
+				{
 					stringBuilder.Append(SPLIT_CHAR);
+				}
 			}
 
 			else
