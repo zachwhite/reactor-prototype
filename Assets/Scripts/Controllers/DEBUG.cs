@@ -15,7 +15,12 @@ public class DEBUG : MonoBehaviour {
 		string[] elements = Chemistry.ParseFormula ("22HHe3(PbO)");
 		for (int i = 0; i < elements.Length; i++)
 			Debug.Log (elements[i]);
-
+			
+			
+		Tokenizer tokenizer = new Tokenizer("22HHe3(PbO)", 
+											@"^([A-Za-z][a-z]*|[0-9]+|[+\-^=()])", 
+											@"^[ \t]*" );
+		// TODO: TEST THE TOKENIZER! Figure out how it works.
 	}
 	
 

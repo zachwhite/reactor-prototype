@@ -41,4 +41,11 @@ public static class Chemistry
 
 		return elements;
 	}
+	
+	
+	
+	private class Equation
+	{
+		
+	}
 }
