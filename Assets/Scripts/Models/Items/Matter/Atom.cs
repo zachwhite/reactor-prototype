@@ -1,4 +1,4 @@
-using MonoConcept.Utilities;
+using MonoConcept.Utilities.Maths;
 using System.Collections.Generic;
 
 public sealed class Atom : IMatter
@@ -132,11 +132,11 @@ public sealed class Atom : IMatter
 	/**
 	 * Return radius of the atomic nucleus.
 	 */
-	public float NucleusRadius
+	public double NucleusRadius
 	{
 		get {
-			float nucleons = (float)(Electrons + Protons + Neutrons);
-			return 1.07f * Maths.CubicRoot(nucleons);
+			double nucleons = (double)(Electrons + Protons + Neutrons);
+			return 1.07f * Maths.CubicRoot( nucleons );
 		}
 	}
 #endregion
